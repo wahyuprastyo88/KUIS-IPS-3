@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal IPS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="identityPage" class="card identity-card">
+      <div class="identity-header">
+        <h1>Latihan Soal</h1>
+        <p>Pelajaran : IPS</p>
+      </div>
+
+      <div class="identity-body">
+        <h2>Identitas Peserta</h2>
+        <label for="nameInput">Nama Peserta</label>
+        <input id="nameInput" type="text" placeholder="Masukkan nama lengkap" autocomplete="name">
+
+        <label for="classInput">Kelas</label>
+        <input id="classInput" type="text" placeholder="Contoh: 4A">
+
+        <button id="startBtn" class="primary-btn">Mulai Kuis</button>
+        <p id="identityError" class="error"></p>
+      </div>
+    </section>
+
+    <section id="quizPage" class="quiz-shell hidden">
+      <header class="top-header">
+        <div>
+          <h1>Latihan Soal</h1>
+          <p>Pelajaran : IPS</p>
+        </div>
+        <div class="participant">
+          <span>Nama Peserta</span>
+          <strong id="participantName">-</strong>
+          <small id="participantClass">-</small>
+        </div>
+      </header>
+
+      <div class="quiz-card">
+        <div class="quiz-meta">
+          <span id="difficulty">LOTS</span>
+          <span id="questionCounter">Soal 1 dari 50</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="tag" id="questionTag">LOTS · Nomor 1–20</div>
+        <h2 id="questionText"></h2>
+
+        <div id="options" class="options"></div>
+
+        <p class="instruction">
+          Pilih satu jawaban. Jawaban dapat diubah sebelum kamu menekan tombol berikutnya.
+        </p>
+
+        <div class="navigation">
+          <button id="prevBtn" class="secondary-btn" disabled>Sebelumnya</button>
+          <button id="nextBtn" class="primary-btn">Berikutnya</button>
+          <button id="submitBtn" class="primary-btn hidden">Kirim Jawaban</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-box">
+      <h2>Kirim Jawaban?</h2>
+      <p>Apakah kamu yakin mengirim jawaban?</p>
+      <div class="modal-actions">
+        <button id="cancelSubmitBtn" class="secondary-btn">Kembali</button>
+        <button id="confirmSubmitBtn" class="primary-btn">Ya, Kirim</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="resultPage" class="result-page hidden">
+    <div class="result-card">
+      <div class="result-icon">✓</div>
+      <h1>Kuis Selesai!</h1>
+      <p id="resultGreeting"></p>
+
+      <div class="score-box">
+        <div>
+          <span>Nilai</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>Benar</span>
+          <strong id="correctCount">0</strong>
+        </div>
+        <div>
+          <span>Salah</span>
+          <strong id="wrongCount">0</strong>
+        </div>
+      </div>
+
+      <p id="resultMessage"></p>
+      <button id="restartBtn" class="primary-btn">Ulangi Kuis</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
